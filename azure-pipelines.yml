@@ -39,5 +39,5 @@ steps:
     containerRegistry: 'DockerImg1'
     repository: 'apurvanaik422 / azuredeveopsdockerbasics'
     command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: '**/AzureDockerfile'
 
