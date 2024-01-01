@@ -1,3 +1,6 @@
 FROM tomcat:latest
 COPY ./webapp/target/webapp.war /usr/local/tomcat/webapps
 RUN cp -r /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps
+RUN curl -fsSL https://get.docker.com -o get-docker.sh
+RUN chmod +x get-docker.sh
+RUN sh get-docker.sh
