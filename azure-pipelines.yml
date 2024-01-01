@@ -41,4 +41,13 @@ steps:
     repository: 'apurvanaik422 / azuredeveopsdockerbasics'
     command: 'buildAndPush'
     Dockerfile: '**/AzureDockerfile'
+- task: CopyFiles@2
+  inputs:
+    Contents: '**AzureDockerfile'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'AzureDockerfile'
+    publishLocation: 'Container'
 
